@@ -1,5 +1,5 @@
 import os
-from datetime import datetime
+from datetime import datetime,timezone
 from bson import ObjectId
 
 from worker.db import db
@@ -99,7 +99,7 @@ async def process_job(job_id: str):
                     "storage_key": storage_key,
                     "download_url": download_url,
                     "file_size_bytes": clip_size,
-                    "completed_at": datetime.utcnow()
+                    "completed_at": datetime.now(timezone.utc)
                 }
             }
         )

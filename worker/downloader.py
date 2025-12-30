@@ -21,13 +21,16 @@ def fetch_video_metadata(youtube_url: str) -> dict:
 
 def download_video(youtube_url: str, output_dir: str) -> str:
     os.makedirs(output_dir, exist_ok=True)
-
     output_path = os.path.join(output_dir, "input.mp4")
 
     ydl_opts = {
         "format": "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4",
         "outtmpl": output_path,
         "merge_output_format": "mp4",
+
+        # 🔥 THIS IS THE IMPORTANT LINE
+        "cookies": "/etc/secrets/youtube_cookies.txt",
+
         "quiet": True,
         "no_warnings": True,
     }
@@ -36,3 +39,4 @@ def download_video(youtube_url: str, output_dir: str) -> str:
         ydl.download([youtube_url])
 
     return output_path
+
