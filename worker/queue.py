@@ -15,8 +15,11 @@ if not REDIS_URL:
 
 redis_client = redis.Redis.from_url(
     REDIS_URL,
-    decode_responses=True
+    decode_responses=True,
+    ssl=True,
+    ssl_cert_reqs=None
 )
+
 
 QUEUE_NAME = "clip_jobs"
 
