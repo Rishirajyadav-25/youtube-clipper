@@ -7,5 +7,4 @@ python-dotenv
 redis
 boto3
 yt-dlp
-os
 ssl
