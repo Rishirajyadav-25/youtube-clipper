@@ -3,13 +3,13 @@ import requests
 import time
 
 # Backend configuration
-# API_BASE_URL = "http://localhost:8000/api/v1"
+API_BASE_URL = "http://localhost:8000/api/v1"
 import os
 # from dotenv import load_dotenv
 
 # load_dotenv()
 
-API_BASE_URL = os.getenv("API_BASE_URL")
+# API_BASE_URL = os.getenv("API_BASE_URL")
 
 st.set_page_config(
     page_title="YouTube Clipper",
