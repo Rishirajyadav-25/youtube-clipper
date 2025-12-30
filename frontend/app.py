@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_BASE_URL = os.get("API_BASE_URL")
+API_BASE_URL = os.getenv("API_BASE_URL")
 
 st.set_page_config(
     page_title="YouTube Clipper",
